@@ -6,9 +6,7 @@ menubar > menu { color: #ecf0f1 !important; } menubar > menu[_moz-menuactive="tr
 #appmenu-toolbar-button {
     color: #ecf0f1  !important;
     background: rgba(225,121,39,0.9) !important;
-    /*display: none !important;*/
     -moz-appearance: none !important;
-    /*text-align: center;*/
     width: 80px;
     font-weight: bold;
     margin-right: 2px !important;
@@ -54,7 +52,6 @@ tab[selected] {
     border-bottom: none !important;
     border-radius: 0px 0px 0 0 !important;
     /* Color */
-    /*background: rgba(230,234,235,1) !important;*/
     background: rgba(241,244,245,1) !important;
     border-color: #555 !important;
 
