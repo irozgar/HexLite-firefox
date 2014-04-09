@@ -1,0 +1,99 @@
+menubar > menu { color: #ecf0f1 !important; } menubar > menu[_moz-menuactive="true"][open="false"] { color: #ecf0f1 !important; } menubar > menu[_moz-menuactive="true"][open="true"] { color: #ecf0f1 !important; } /* MenuColors, Added by QtCurve -- do not remove */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+/* Customized for HexLite explore DOM with chrome://browser/content/browser.xul*/
+#appmenu-toolbar-button {
+    color: #ecf0f1  !important;
+    background: rgba(225,121,39,0.9) !important;
+    /*display: none !important;*/
+    -moz-appearance: none !important;
+    /*text-align: center;*/
+    width: 80px;
+    font-weight: bold;
+    margin-right: 2px !important;
+    -moz-transition-duration: 0.5s !important;
+}
+
+#appmenu-toolbar-button:hover {
+    background: rgba(225,121,39,1) !important;
+    -moz-transition-duration: 0.5s !important;
+}
+
+#appmenu-toolbar-button > .toolbarbutton-menu-dropmarker {
+    display: none !important;
+}
+
+tab, .tabs-newtab-button {
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+    -moz-transition-duration: 0.5 !important;
+}
+
+/* Inactive tabs and new tab button custom shape and color */
+tab:not([selected]), .tabs-newtab-button {
+
+    /* Shape */
+    border: 0px solid !important;
+    border-radius: 0px 0px 0 0 !important;
+    border-bottom: 0px !important;
+
+    /* Color */
+    background: rgba(217,221,222,1) !important;
+    border-color: #555 !important;
+    opacity: 0.9;
+
+    /* */
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+}
+
+tab[selected] {
+    /* Shape */
+    border: 0px solid !important;
+    border-bottom: none !important;
+    border-radius: 0px 0px 0 0 !important;
+    /* Color */
+    /*background: rgba(230,234,235,1) !important;*/
+    background: rgba(241,244,245,1) !important;
+    border-color: #555 !important;
+
+    padding-left: 4px !important;
+    padding-right: 2px !important;
+}
+
+tab:not([selected]):hover, .tabs-newtab-button:hover, #new-tab-button {
+    opacity: 1;
+}
+
+#new-tab-button, #alltabs-button {
+    background-color: rgba(217,221,222,1) !important;
+    -moz-appearance: none !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    opacity: 0.9;
+    border: 0px solid !important;
+}
+
+#new-tab-button {
+    margin-left: 2px !important;
+    margin-right: 1px !important;
+}
+
+#alltabs-button {
+    margin-left: 1px !important;
+}
+
+#new-tab-button:hover, #alltabs-button:hover {
+    opacity: 1;
+}
+
+.tabbrowser-arrowscrollbox *[class^="scrollbutton"] {
+    /* Hide tab scroll buttons */
+    -moz-appearance: none !important;
+    background: rgba(217,221,222,1) !important;
+    border-radius: 0px 0px 0px 0px !important;
+    border: 0px solid !important;
+    margin-left: 1px;
+    margin-right: 1px;
+}
