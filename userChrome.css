@@ -1,67 +1,92 @@
 menubar > menu { color: #ecf0f1 !important; } menubar > menu[_moz-menuactive="true"][open="false"] { color: #ecf0f1 !important; } menubar > menu[_moz-menuactive="true"][open="true"] { color: #ecf0f1 !important; } /* MenuColors, Added by QtCurve -- do not remove */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
-
-/* Customized for HexLite explore DOM with chrome://browser/content/browser.xul*/
-#appmenu-toolbar-button {
-    color: #ecf0f1  !important;
-    background: rgba(225,121,39,0.9) !important;
-    -moz-appearance: none !important;
-    width: 80px;
-    font-weight: bold;
-    margin-right: 2px !important;
-    -moz-transition-duration: 0.5s !important;
+.tab-background-middle {
+border-left: none !important;
+border-right: none !important;
+margin: 0 0px !important;
 }
 
-#appmenu-toolbar-button:hover {
-    background: rgba(225,121,39,1) !important;
-    -moz-transition-duration: 0.5s !important;
+.tab-background,
+.tabs-newtab-button {
+-moz-margin-end: 0.5px !important;
+-moz-margin-start: 0.5px !important;
 }
 
-#appmenu-toolbar-button > .toolbarbutton-menu-dropmarker {
-    display: none !important;
+.tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
+-moz-padding-end: 0 !important;
+-moz-padding-start: 0 !important;
 }
 
-tab, .tabs-newtab-button {
-    margin-left: 1px !important;
-    margin-right: 1px !important;
-    -moz-transition-duration: 0.5 !important;
+.tab-background-start::after,
+.tab-background-start::before,
+.tab-background-start,
+.tab-background-end,
+.tab-background-end::after,
+.tab-background-end::before {
+width: 0px !important;
 }
 
-/* Inactive tabs and new tab button custom shape and color */
-tab:not([selected]), .tabs-newtab-button {
-
-    /* Shape */
-    border: 0px solid !important;
-    border-radius: 0px 0px 0 0 !important;
-    border-bottom: 0px !important;
-
-    /* Color */
-    background: rgba(217,221,222,1) !important;
-    border-color: #555 !important;
-    opacity: 0.9;
-
-    /* */
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true]),
+.tabs-newtab-button:hover {
+background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5) 80%, rgba(255,255,255,0.5)) !important;
+background-size: 100% !important;
 }
 
-tab[selected] {
-    /* Shape */
-    border: 0px solid !important;
-    border-bottom: none !important;
-    border-radius: 0px 0px 0 0 !important;
-    /* Color */
-    background: rgba(241,244,245,1) !important;
-    border-color: #555 !important;
-
-    padding-left: 4px !important;
-    padding-right: 2px !important;
+#tabbrowser-tabs[movingtab] > .tabbrowser-tab[afterselected]::before,
+#tabbrowser-tabs[movingtab] > .tabbrowser-tab[beforeselected]::after,
+#tabbrowser-tabs[overflow] > .tabbrowser-tab[last-visible-tab]:not([selected])::after,
+#tabbrowser-tabs[overflow] > .tabbrowser-tab[first-visible-tab]:not([selected])::before,
+.tabbrowser-tab:not([selected]):not([afterselected]):hover::before,
+.tabbrowser-tab:not([selected]):not([beforeselected]):hover::after,
+.tabbrowser-tab:not([selected]):not([afterselected])::before,
+.tabbrowser-tab:not([selected]):not([beforeselected])::after {
+-moz-margin-start: -1.5px !important;
+-moz-margin-end: -1.5px !important;
+background-image: url(chrome://browser/skin/tabbrowser/tab-separator.png) !important;
+/*background-image: none !important;*/
+background-size: 3px 100% !important;
+content: "" !important;
+display: -moz-box !important;
+margin-bottom: 2px !important;
+width: 3px !important;
 }
 
-tab:not([selected]):hover, .tabs-newtab-button:hover, #new-tab-button {
-    opacity: 1;
+.tabbrowser-tab[selected]::before,
+.tabbrowser-tab[selected]::after {
+-moz-margin-start: -0.5px !important;
+-moz-margin-end: -0.0px !important;
+background-color: rgba(29,49,75,0.3843) !important;
+background-size: 1px 100% !important;
+content: "" !important;
+display: -moz-box !important;
+margin-bottom: 2px !important;
+margin-top: 1px !important;
+width: 1px !important;
 }
+
+#tabbrowser-tabs{
+margin-left: -1px !important;
+}
+
+/* OWN */
+.tabbrowser-tab:not([selected]),
+.tabs-newtab-button {
+    background-color: rgba(217,221,222,1) !important;
+}
+
+.tabs-newtab-button {
+    margin-left: 0px;
+}
+
+.tabbrowser-tab[selected] {
+/*    background-color: rgba(241,244,245,1) !important;*/
+}
+
+.tabbrowser-tab > .tab-stack >.tab-background[selected=true] {
+margin-top: -2px !important;
+background-color: rgba(241, 244, 245, 1) !important;
+}
+
 
 #new-tab-button, #alltabs-button {
     background-color: rgba(217,221,222,1) !important;
@@ -72,17 +97,17 @@ tab:not([selected]):hover, .tabs-newtab-button:hover, #new-tab-button {
     border: 0px solid !important;
 }
 
-#new-tab-button {
-    margin-left: 2px !important;
-    margin-right: 1px !important;
-}
-
-#alltabs-button {
-    margin-left: 1px !important;
-}
-
-#new-tab-button:hover, #alltabs-button:hover {
-    opacity: 1;
+#new-tab-button:hover::before,
+#new-tab-button:hover::after {
+    -moz-margin-start: -0.5px !important;
+    -moz-margin-end: -0.0px !important;
+    background-color: rgba(29,49,75,0.3843) !important;
+    background-size: 1px 100% !important;
+    content: "" !important;
+    display: -moz-box !important;
+    margin-bottom: 2px !important;
+    margin-top: 1px !important;
+    width: 1px !important;
 }
 
 .tabbrowser-arrowscrollbox *[class^="scrollbutton"] {
@@ -91,6 +116,11 @@ tab:not([selected]):hover, .tabs-newtab-button:hover, #new-tab-button {
     background: rgba(217,221,222,1) !important;
     border-radius: 0px 0px 0px 0px !important;
     border: 0px solid !important;
-    margin-left: 1px;
-    margin-right: 1px;
+}
+
+.tabbrowser-tabs .scrollbutton-up {
+    margin-left: 0px !important;
+}
+.tabbrowser-tabs .scrollbutton-down{
+    margin-right: 2px !important;
 }
